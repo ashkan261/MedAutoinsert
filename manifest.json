@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Form Autofill for app06.ivmis.com",
+  "version": "1.0",
+  "description": "Autofill forms on app06.ivmis.com with test data",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://app06.ivmis.com/*",
+    "https://app06.ivmis.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Fill Form",
+    "default_icon": "icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://app06.ivmis.com/*", "https://app06.ivmis.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
